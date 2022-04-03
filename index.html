@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">https://github.com/paingsoeko/down/blob/main/index.html
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,42 +25,40 @@
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
             <label for="email-address" class="sr-only">Link</label>
-            <input id="email-address" name="email" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email valid url">
+            <input id="email-address" name="email" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Enter valid url">
           </div>
           
         </div>
   
   
         <div>
-          <button type="button" onclick="myFunction()" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onclick="myFunction()">
+          <a type="button" id="goto" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             <span class="absolute left-0 inset-y-0 flex items-center pl-3">
               <!-- Heroicon name: solid/lock-closed -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Search</title><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>
+              <svg class="h-6 w-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
             </span>
             Go
-          </button>
+          </a>
+      
         </div>
       </form>
     </div>
   </div>
 
 
-<iframe id="widgetApi" class="linkpast" width="100%" height="100%" allowtransparency="true" scrolling="no" style="border:none"></iframe>
-<script>
-    function myFunction() {
+
+    <script>
+
+
       var x = document.getElementById("email-address");
-      var currentVal = x.value;
-      
-        // document.getElementById("widgetApi").style.display="inline";
-        document.getElementById("widgetApi").setAttribute("src", "https://yt-download.org/api/widget?url="+currentVal);
-      }
+      x.addEventListener("input",()=>{ 
+       document.getElementById("goto").setAttribute("href", "https://yt-download.org/api/widget?url="+x.value);
+      });
 
     </script>
 
     
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
-<script>iFrameResize({ log: false, minHeight: 400 }, '#widgetApi')</script>
 </body>
 </html>
