@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Dowloader</title>
+
+    <!-- links -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="h-full"> 
+  <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8">
+      <div>
+        <img class="mx-auto h-12 w-auto" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-7cQVT2-FLuMMJwv05XLeE9qkjMKylde0j8WUil6Aa5uFSB9abtjkAkn8xVB_2Fbfc_t2wp0EJZHiBR7wDTzMkpUaewbGzMJebmXBPRKFeFR6LwjvAtW7Pr2Nngrc5rZiAclISJMg7zsaOH-_TGD3n8Tnr7LwKysR6wAKz-He3aHwwbzhrFPig0XI/s527/kopaing_logo_black.png" alt="Workflow">
+        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Media Downloader</h2>
+        <p class="mt-2 text-center text-sm text-gray-600">
+          Download your favorite Videos as MP3, MP4 and more
+        </p>
+      </div>
+      <form class="mt-8 space-y-6" action="#" method="POST">
+        <input type="hidden" name="remember" value="true">
+        <div class="rounded-md shadow-sm -space-y-px">
+          <div>
+            <label for="email-address" class="sr-only">Link</label>
+            <input id="email-address" name="email" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email valid url">
+          </div>
+          
+        </div>
+  
+  
+        <div>
+          <button type="button" onclick="myFunction()" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onclick="myFunction()">
+            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+              <!-- Heroicon name: solid/lock-closed -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Search</title><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>
+            </span>
+            Go
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+<iframe id="widgetApi" class="linkpast" width="100%" height="100%" allowtransparency="true" scrolling="no" style="border:none"></iframe>
+<script>
+    function myFunction() {
+      var x = document.getElementById("email-address");
+      var currentVal = x.value;
+      
+        // document.getElementById("widgetApi").style.display="inline";
+        document.getElementById("widgetApi").setAttribute("src", "https://yt-download.org/api/widget?url="+currentVal);
+      }
+
+    </script>
+
+    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
+<script>iFrameResize({ log: false, minHeight: 400 }, '#widgetApi')</script>
+</body>
+</html>

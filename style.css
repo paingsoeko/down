@@ -1,0 +1,20 @@
+/* :root{
+    --maincolor:rgb(20, 21, 36);
+    --secondcolor:rgb(8, 7, 19);
+    --fontmaincolor:#fff;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    background-color: var(--secondcolor);
+}
+
+/* .linkpast{
+    display: none;
+} */
