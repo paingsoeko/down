@@ -431,7 +431,7 @@ body {
 /* CONTENT */
 
 #dowloader{
-	height: 700px;
+	height: 0px;
 	margin-top: 15px;
 }
 
@@ -453,9 +453,7 @@ body {
 		display: none;
 	}
 	
-	#content main .table-data .head h3{
-		font-size: 20px;
-	}
+
 
 	.form-input input {
 
@@ -480,9 +478,16 @@ body {
 	}
 	.form-input input {
 
-		width: 250px;
-		margin-bottom: 5px;
+		width: 320px;
+		margin-bottom: 10px;
 		
+		
+	}
+	#content main{
+		padding: 0px;
+	}
+	#content main .head-title{
+		padding: 0 20px;
 	}
 
 	#content nav form .form-input button {

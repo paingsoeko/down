@@ -44,9 +44,9 @@
 					<h1>Media Dowloader</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Home</a>
+							<a href="#">Download your favorite Videos as MP3, MP4 and more</a>
 						</li>
-						<li><i class='bx bx-chevron-right' ></i></li>
+						
 						<!-- <li>
 							<a class="active" href="#">Home</a>
 						</li> -->
@@ -59,7 +59,6 @@
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Download your favorite Videos as MP3, MP4 and more</h3>
 						
 					</div>
 					<div class="form-input">
@@ -76,6 +75,15 @@
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
+	<div class="footer" style="margin-top: 50px;">
+		<center>
+			<p style="color: rgb(255, 56, 56);">This site is under the testing!</p>
+			<br>
+			<br>
+			<p>
+			Creator by <a href="https://mrkopaing.blogspot.com/" target="_blank">kopaing</a>
+		</p></center>
+	</div>
 	
 	<script>
 		
@@ -83,6 +91,7 @@ function myFunction() {
   var url = document.getElementById("url");
   let dowloader = document.getElementById("dowloader");
 
+  dowloader.style.height = "650px";
   dowloader.innerHTML += `<iframe id="widgetApi" src="https://yt-download.org/api/widget?url=${url.value}"
 						width="100%" height="100%" allowtransparency="true" scrolling="no" style="border:none; border-radius:20px;"></iframe>`;
 
