@@ -1,64 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Dowloader</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- links -->
-    <link rel="stylesheet" href="style.css">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="style.css">
+
+	<title>AdminHub</title>
 </head>
-<body class="h-full"> 
-  <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-md w-full space-y-8">
-      <div>
-        <img class="mx-auto h-12 w-auto" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-7cQVT2-FLuMMJwv05XLeE9qkjMKylde0j8WUil6Aa5uFSB9abtjkAkn8xVB_2Fbfc_t2wp0EJZHiBR7wDTzMkpUaewbGzMJebmXBPRKFeFR6LwjvAtW7Pr2Nngrc5rZiAclISJMg7zsaOH-_TGD3n8Tnr7LwKysR6wAKz-He3aHwwbzhrFPig0XI/s527/kopaing_logo_black.png" alt="Workflow">
-        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Media Downloader</h2>
-        <p class="mt-2 text-center text-sm text-gray-600">
-          Download your favorite Videos as MP3, MP4 and more
-        </p>
-      </div>
-      <form class="mt-8 space-y-6" action="#" method="POST">
-        <input type="hidden" name="remember" value="true">
-        <div class="rounded-md shadow-sm -space-y-px">
-          <div>
-            <label for="email-address" class="sr-only">Link</label>
-            <input id="email-address" name="email" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Enter valid url">
-          </div>
-          
-        </div>
-  
-  
-        <div>
-          <a type="button" id="goto" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-              <!-- Heroicon name: solid/lock-closed -->
-              <svg class="h-6 w-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
-            </span>
-            Go
-          </a>
-      
-        </div>
-      </form>
-    </div>
-  </div>
+<body>
 
 
 
-    <script>
 
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
 
-      var x = document.getElementById("email-address");
-      x.addEventListener("input",()=>{ 
-       document.getElementById("goto").setAttribute("href", "https://yt-download.org/api/widget?url="+x.value);
-      });
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			
+			<!-- <a href="#" class="profile">
+				<img src="https://svgshare.com/i/fu_.svg">
+			</a> -->
+		</nav>
+		<!-- NAVBAR -->
 
-    </script>
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Media Dowloader</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<!-- <li>
+							<a class="active" href="#">Home</a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
 
-    
+			
 
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Download your favorite Videos as MP3, MP4 and more</h3>
+						
+					</div>
+					<div class="form-input">
+						<input type="search" id="url" placeholder="Url...">
+						<button type="button" onclick="myFunction()" class="search-btn"><i class='bx bx-search' ></i></button>
+					</div>
+					<div id="dowloader">
 
+					</div>
+				</div>
+			
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+	<script>
+		
+function myFunction() {
+  var url = document.getElementById("url");
+  let dowloader = document.getElementById("dowloader");
+
+  dowloader.innerHTML += `<iframe id="widgetApi" src="https://yt-download.org/api/widget?url=${url.value}"
+						width="100%" height="100%" allowtransparency="true" scrolling="no" style="border:none; border-radius:20px;"></iframe>`;
+
+    // document.getElementById("widgetApi").style.display="inline";
+    // document.getElementById("widgetApi").setAttribute("src", "https://yt-download.org/api/widget?url="+url.value);
+  }
+	</script>
+
+	<script src="script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
+<script>iFrameResize({ log: false, minHeight: 700 }, '#widgetApi')</script>
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
