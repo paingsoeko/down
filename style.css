@@ -196,7 +196,7 @@ header .header-brand{
 
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {padding: 2px 16px;overflow: auto;}
 
 .modal-footer {
 	padding: 11px 16px;
@@ -204,6 +204,10 @@ header .header-brand{
     color: black;
     text-align: center;
 
+}
+iframe{
+    overflow: auto !important;
+    scroll-behavior: smooth;
 }
 
 /* Add Animation */
@@ -272,5 +276,8 @@ header .header-brand{
     .format{
         font-size: 12px;
         margin: 0 4px;
+    }
+    iframe{
+        min-height: 435px !important;
     }
 }
