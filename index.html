@@ -9,12 +9,7 @@
 	<div class="nav">
         <header>
             <a href="#" class="header-brand">Media Dowloader</a>
-            <div class="switch">
-                <span class="format">mp4</span>
-                <input type="checkbox" id="switch-mode" hidden checked>
-		        <label for="switch-mode" class="switch-mode"></label>
-                <span class="format">mp3</span>
-            </div>
+            
         </header>
         
     </div>
@@ -50,8 +45,7 @@
       <h2>Choose quality</h2>
     </div>
     <div class="modal-body" id="act">
-		<iframe id="buttonApi" 
-		width="100%" height="100%" allowtransparency="true" style="border:none"></iframe>
+      <iframe id="widgetApi" width="100%" height="100%" allowtransparency="true" scrolling="no" style="border:none"></iframe>
     </div>
     <div class="modal-footer">
       <p>Developed by <a href="https://mrkopaing.blogspot.com/" style="text-decoration: none; color: rgb(54, 54, 54);">kopaing</a></p>
@@ -59,9 +53,10 @@
   </div>
 
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
-<script>iFrameResize({ log: true, minHeight: 360 }, '#buttonApi')</script>
+
 <script src="app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
+<script>iFrameResize({ log: false, minHeight: 360 }, '#widgetApi')</script>
 
 </body>
 </html>

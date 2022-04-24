@@ -16,22 +16,33 @@ const switchMode = document.getElementById('switch-mode');
 
 var format= 'mp3';
 //Change format
-switchMode.addEventListener('change', function () {
-	if(this.checked) {
-		document.body.classList.add('dark');
-        btn.onclick = function() {
-            modal.style.display = "block";
-            document.getElementById("buttonApi").setAttribute("src", "https://yt-download.org/api/button/mp3?url="+url.value); 
+// switchMode.addEventListener('change', function () {
+// 	if(this.checked) {
+// 		document.body.classList.add('dark');
+//         btn.onclick = function() {
+//             modal.style.display = "block";
+//             document.getElementById("buttonApi").setAttribute("src", "https://yt-download.org/api/button/mp3?url="+url.value); 
                      
-          }
-	} else {
-        btn.onclick = function() {
-            modal.style.display = "block";
-            document.getElementById("buttonApi").setAttribute("src", "https://yt-download.org/api/button/mp4?url="+url.value); 
+//           }
+// 	} else {
+//         btn.onclick = function() {
+//             modal.style.display = "block";
+//             document.getElementById("buttonApi").setAttribute("src", "https://yt-download.org/api/button/mp4?url="+url.value); 
         
-          }
-	}
-})
+//           }
+// 	}
+// })
+
+// btn.addEventListener('click', function(){
+//   return document.getElementById("buttonApi").setAttribute("src", "https://yt-download.org/api/widget?url="+url.value); 
+// });
+
+btn.onclick = function() {
+  modal.style.display = "block";
+  console.log(url.value);
+  document.getElementById("widgetApi").setAttribute("src", "https://yt-download.org/api/widget?url="+url.value); 
+           
+}
 
 // When the user clicks the button, open the modal 
 
